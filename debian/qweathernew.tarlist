@@ -1,0 +1,9 @@
+# This file is created by MADDE 'dh_fixperms'.
+# MADDE 'dpkg-deb' uses this file when creating
+# 'data.tar.gz' for debian package ar archive.
+755 root root . ./usr /
+755 root root . ./usr/share /
+755 root root . ./usr/share/doc /
+755 root root . ./usr/share/doc/qweathernew /
+644 root root . ./usr/share/doc/qweathernew/changelog.gz debian/qweathernew/usr/share/doc/qweathernew/changelog.gz
+644 root root . ./usr/share/doc/qweathernew/copyright debian/qweathernew/usr/share/doc/qweathernew/copyright

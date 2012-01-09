@@ -1,14 +1,14 @@
+#include "mainwindow.h"
+
 #include <QtGui/QApplication>
-#include "qmlapplicationviewer.h"
 
-Q_DECL_EXPORT int main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-    QScopedPointer<QApplication> app(createApplication(argc, argv));
-    QScopedPointer<QmlApplicationViewer> viewer(QmlApplicationViewer::create());
+    QApplication app(argc, argv);
 
-    viewer->setOrientation(QmlApplicationViewer::ScreenOrientationLockLandscape);
-    viewer->setMainQmlFile(QLatin1String("qml/QWeather/main.qml"));
-    viewer->showExpanded();
+    MainWindow mainWindow;
+    mainWindow.setOrientation(MainWindow::ScreenOrientationLockLandscape);
+    mainWindow.showExpanded();
 
-    return app->exec();
+    return app.exec();
 }
