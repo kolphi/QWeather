@@ -47,7 +47,7 @@
       <x>10</x>
       <y>10</y>
       <width>781</width>
-      <height>351</height>
+      <height>368</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="layout" stretch="5,30,10">
@@ -707,7 +707,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed 11. Jan 21:24:30 2012
-**      by: Qt User Interface Compiler version 4.7.0
+** Created: Wed 11. Jan 20:49:26 2012
+**      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -21,7 +21,6 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenuBar>
 #include <QtGui/QPushButton>
-#include <QtGui/QStatusBar>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
 
@@ -43,9 +42,8 @@ public:
     QLabel *lb_main_temp;
     QLabel *lb_main_humidity;
     QLabel *lb_main_wind;
-    QVBoxLayout *verticalLayout;
-    QLabel *img_main;
     QLabel *lb_main_condition;
+    QLabel *img_main;
     QHBoxLayout *bottom;
     QHBoxLayout *fc_1;
     QLabel *lb_date_fc_1;
@@ -66,33 +64,26 @@ public:
     QLabel *lb_temp_high_3;
     QLabel *lb_temp_low_3;
     QMenuBar *menuBar;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(800, 480);
-        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
-        MainWindow->setSizePolicy(sizePolicy);
+        MainWindow->resize(797, 479);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
-        centralWidget->setSizePolicy(sizePolicy1);
-        centralWidget->setMinimumSize(QSize(600, 300));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
+        centralWidget->setSizePolicy(sizePolicy);
         centralWidget->setAutoFillBackground(false);
-        centralWidget->setStyleSheet(QString::fromUtf8("QWidget { background : #404040; color: #ffffff}"));
+        centralWidget->setStyleSheet(QString::fromUtf8("QWidget { background : white; }"));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 10, 781, 351));
+        layoutWidget->setGeometry(QRect(10, 10, 771, 431));
         layout = new QVBoxLayout(layoutWidget);
-        layout->setSpacing(5);
+        layout->setSpacing(6);
         layout->setContentsMargins(11, 11, 11, 11);
         layout->setObjectName(QString::fromUtf8("layout"));
         layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
@@ -101,14 +92,10 @@ public:
         top->setSpacing(10);
         top->setObjectName(QString::fromUtf8("top"));
         top->setSizeConstraint(QLayout::SetDefaultConstraint);
-        top->setContentsMargins(-1, 10, -1, 10);
         lb_pos = new QLabel(layoutWidget);
         lb_pos->setObjectName(QString::fromUtf8("lb_pos"));
-        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(lb_pos->sizePolicy().hasHeightForWidth());
-        lb_pos->setSizePolicy(sizePolicy2);
+        sizePolicy.setHeightForWidth(lb_pos->sizePolicy().hasHeightForWidth());
+        lb_pos->setSizePolicy(sizePolicy);
         QFont font;
         font.setPointSize(16);
         lb_pos->setFont(font);
@@ -117,30 +104,20 @@ public:
 
         le_pos = new QLineEdit(layoutWidget);
         le_pos->setObjectName(QString::fromUtf8("le_pos"));
-        QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(le_pos->sizePolicy().hasHeightForWidth());
-        le_pos->setSizePolicy(sizePolicy3);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(le_pos->sizePolicy().hasHeightForWidth());
+        le_pos->setSizePolicy(sizePolicy1);
         le_pos->setMinimumSize(QSize(0, 0));
         le_pos->setFont(font);
-        le_pos->setStyleSheet(QString::fromUtf8("QLineEdit { background : #ffffff; color: #000000}"));
 
         top->addWidget(le_pos);
 
         btn_go = new QPushButton(layoutWidget);
         btn_go->setObjectName(QString::fromUtf8("btn_go"));
-        QSizePolicy sizePolicy4(QSizePolicy::Fixed, QSizePolicy::Expanding);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(btn_go->sizePolicy().hasHeightForWidth());
-        btn_go->setSizePolicy(sizePolicy4);
-        QFont font1;
-        font1.setPointSize(12);
-        font1.setBold(true);
-        font1.setWeight(75);
-        btn_go->setFont(font1);
-        btn_go->setAutoDefault(false);
+        sizePolicy.setHeightForWidth(btn_go->sizePolicy().hasHeightForWidth());
+        btn_go->setSizePolicy(sizePolicy);
 
         top->addWidget(btn_go);
 
@@ -148,48 +125,50 @@ public:
         layout->addLayout(top);
 
         main = new QHBoxLayout();
-        main->setSpacing(0);
-        main->setContentsMargins(0, 0, 0, 0);
+        main->setSpacing(50);
         main->setObjectName(QString::fromUtf8("main"));
+        main->setContentsMargins(0, -1, 50, 0);
         main_data = new QVBoxLayout();
         main_data->setSpacing(0);
         main_data->setObjectName(QString::fromUtf8("main_data"));
         main_data->setSizeConstraint(QLayout::SetDefaultConstraint);
-        main_data->setContentsMargins(-1, 10, -1, 20);
+        main_data->setContentsMargins(-1, 20, -1, 20);
         lb_main_date = new QLabel(layoutWidget);
         lb_main_date->setObjectName(QString::fromUtf8("lb_main_date"));
-        QSizePolicy sizePolicy5(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        sizePolicy5.setHorizontalStretch(0);
-        sizePolicy5.setVerticalStretch(0);
-        sizePolicy5.setHeightForWidth(lb_main_date->sizePolicy().hasHeightForWidth());
-        lb_main_date->setSizePolicy(sizePolicy5);
-        QFont font2;
-        font2.setPointSize(10);
-        font2.setItalic(true);
-        lb_main_date->setFont(font2);
-        lb_main_date->setAlignment(Qt::AlignCenter);
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(lb_main_date->sizePolicy().hasHeightForWidth());
+        lb_main_date->setSizePolicy(sizePolicy2);
+        QFont font1;
+        font1.setPointSize(10);
+        font1.setItalic(false);
+        lb_main_date->setFont(font1);
+        lb_main_date->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         main_data->addWidget(lb_main_date);
 
         lb_main_temp = new QLabel(layoutWidget);
         lb_main_temp->setObjectName(QString::fromUtf8("lb_main_temp"));
-        sizePolicy5.setHeightForWidth(lb_main_temp->sizePolicy().hasHeightForWidth());
-        lb_main_temp->setSizePolicy(sizePolicy5);
-        QFont font3;
-        font3.setPointSize(30);
-        font3.setBold(true);
-        font3.setWeight(75);
-        lb_main_temp->setFont(font3);
-        lb_main_temp->setStyleSheet(QString::fromUtf8("QLabel { color : #ff3333; }"));
+        sizePolicy2.setHeightForWidth(lb_main_temp->sizePolicy().hasHeightForWidth());
+        lb_main_temp->setSizePolicy(sizePolicy2);
+        QFont font2;
+        font2.setPointSize(26);
+        font2.setBold(true);
+        font2.setWeight(75);
+        lb_main_temp->setFont(font2);
+        lb_main_temp->setStyleSheet(QString::fromUtf8("QLabel { color : red; }"));
         lb_main_temp->setAlignment(Qt::AlignCenter);
 
         main_data->addWidget(lb_main_temp);
 
         lb_main_humidity = new QLabel(layoutWidget);
         lb_main_humidity->setObjectName(QString::fromUtf8("lb_main_humidity"));
-        sizePolicy5.setHeightForWidth(lb_main_humidity->sizePolicy().hasHeightForWidth());
-        lb_main_humidity->setSizePolicy(sizePolicy5);
-        lb_main_humidity->setFont(font);
+        sizePolicy2.setHeightForWidth(lb_main_humidity->sizePolicy().hasHeightForWidth());
+        lb_main_humidity->setSizePolicy(sizePolicy2);
+        QFont font3;
+        font3.setPointSize(14);
+        lb_main_humidity->setFont(font3);
         lb_main_humidity->setAlignment(Qt::AlignCenter);
 
         main_data->addWidget(lb_main_humidity);
@@ -197,68 +176,56 @@ public:
         lb_main_wind = new QLabel(layoutWidget);
         lb_main_wind->setObjectName(QString::fromUtf8("lb_main_wind"));
         lb_main_wind->setEnabled(true);
-        sizePolicy5.setHeightForWidth(lb_main_wind->sizePolicy().hasHeightForWidth());
-        lb_main_wind->setSizePolicy(sizePolicy5);
-        lb_main_wind->setFont(font);
+        sizePolicy2.setHeightForWidth(lb_main_wind->sizePolicy().hasHeightForWidth());
+        lb_main_wind->setSizePolicy(sizePolicy2);
+        lb_main_wind->setFont(font3);
         lb_main_wind->setAlignment(Qt::AlignCenter);
 
         main_data->addWidget(lb_main_wind);
 
+        lb_main_condition = new QLabel(layoutWidget);
+        lb_main_condition->setObjectName(QString::fromUtf8("lb_main_condition"));
+        sizePolicy2.setHeightForWidth(lb_main_condition->sizePolicy().hasHeightForWidth());
+        lb_main_condition->setSizePolicy(sizePolicy2);
+        lb_main_condition->setFont(font3);
+        lb_main_condition->setAlignment(Qt::AlignCenter);
+
+        main_data->addWidget(lb_main_condition);
+
         main_data->setStretch(0, 5);
         main_data->setStretch(1, 25);
-        main_data->setStretch(2, 5);
-        main_data->setStretch(3, 5);
+        main_data->setStretch(2, 10);
+        main_data->setStretch(3, 10);
+        main_data->setStretch(4, 10);
 
         main->addLayout(main_data);
 
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setSpacing(6);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(100, 20, 100, 20);
         img_main = new QLabel(layoutWidget);
         img_main->setObjectName(QString::fromUtf8("img_main"));
-        sizePolicy2.setHeightForWidth(img_main->sizePolicy().hasHeightForWidth());
-        img_main->setSizePolicy(sizePolicy2);
-        img_main->setMinimumSize(QSize(128, 128));
-        img_main->setMaximumSize(QSize(128, 128));
+        sizePolicy.setHeightForWidth(img_main->sizePolicy().hasHeightForWidth());
+        img_main->setSizePolicy(sizePolicy);
+        img_main->setMinimumSize(QSize(200, 200));
         img_main->setFrameShape(QFrame::NoFrame);
-        img_main->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/sunny.png")));
+        img_main->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/sonne.jpg")));
         img_main->setScaledContents(true);
-        img_main->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(img_main);
-
-        lb_main_condition = new QLabel(layoutWidget);
-        lb_main_condition->setObjectName(QString::fromUtf8("lb_main_condition"));
-        QSizePolicy sizePolicy6(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy6.setHorizontalStretch(0);
-        sizePolicy6.setVerticalStretch(0);
-        sizePolicy6.setHeightForWidth(lb_main_condition->sizePolicy().hasHeightForWidth());
-        lb_main_condition->setSizePolicy(sizePolicy6);
-        lb_main_condition->setFont(font);
-        lb_main_condition->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(lb_main_condition);
-
-
-        main->addLayout(verticalLayout);
+        main->addWidget(img_main);
 
 
         layout->addLayout(main);
 
         bottom = new QHBoxLayout();
-        bottom->setSpacing(50);
+        bottom->setSpacing(10);
         bottom->setObjectName(QString::fromUtf8("bottom"));
         bottom->setSizeConstraint(QLayout::SetDefaultConstraint);
         fc_1 = new QHBoxLayout();
         fc_1->setSpacing(6);
         fc_1->setObjectName(QString::fromUtf8("fc_1"));
         fc_1->setSizeConstraint(QLayout::SetMinimumSize);
-        fc_1->setContentsMargins(0, -1, 0, -1);
         lb_date_fc_1 = new QLabel(layoutWidget);
         lb_date_fc_1->setObjectName(QString::fromUtf8("lb_date_fc_1"));
         QFont font4;
-        font4.setPointSize(14);
+        font4.setPointSize(12);
         lb_date_fc_1->setFont(font4);
         lb_date_fc_1->setAlignment(Qt::AlignCenter);
 
@@ -266,14 +233,12 @@ public:
 
         img_weather_fc_1 = new QLabel(layoutWidget);
         img_weather_fc_1->setObjectName(QString::fromUtf8("img_weather_fc_1"));
-        sizePolicy2.setHeightForWidth(img_weather_fc_1->sizePolicy().hasHeightForWidth());
-        img_weather_fc_1->setSizePolicy(sizePolicy2);
+        sizePolicy.setHeightForWidth(img_weather_fc_1->sizePolicy().hasHeightForWidth());
+        img_weather_fc_1->setSizePolicy(sizePolicy);
         img_weather_fc_1->setMinimumSize(QSize(80, 80));
-        img_weather_fc_1->setMaximumSize(QSize(80, 80));
         img_weather_fc_1->setAutoFillBackground(false);
         img_weather_fc_1->setFrameShape(QFrame::NoFrame);
-        img_weather_fc_1->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/chance_of_tstorm.png")));
-        img_weather_fc_1->setScaledContents(true);
+        img_weather_fc_1->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/regen.jpg")));
 
         fc_1->addWidget(img_weather_fc_1);
 
@@ -285,11 +250,11 @@ public:
         lb_temp_high_1 = new QLabel(layoutWidget);
         lb_temp_high_1->setObjectName(QString::fromUtf8("lb_temp_high_1"));
         QFont font5;
-        font5.setPointSize(14);
+        font5.setPointSize(12);
         font5.setBold(true);
         font5.setWeight(75);
         lb_temp_high_1->setFont(font5);
-        lb_temp_high_1->setStyleSheet(QString::fromUtf8("QLabel { color : #ff3333; }"));
+        lb_temp_high_1->setStyleSheet(QString::fromUtf8("QLabel { color : red; }"));
         lb_temp_high_1->setAlignment(Qt::AlignCenter);
 
         vl_temp->addWidget(lb_temp_high_1);
@@ -297,7 +262,7 @@ public:
         lb_temp_low_1 = new QLabel(layoutWidget);
         lb_temp_low_1->setObjectName(QString::fromUtf8("lb_temp_low_1"));
         lb_temp_low_1->setFont(font5);
-        lb_temp_low_1->setStyleSheet(QString::fromUtf8("QLabel { color : #49caff; }"));
+        lb_temp_low_1->setStyleSheet(QString::fromUtf8("QLabel { color : blue; }"));
         lb_temp_low_1->setAlignment(Qt::AlignCenter);
 
         vl_temp->addWidget(lb_temp_low_1);
@@ -312,7 +277,6 @@ public:
         fc_2->setSpacing(6);
         fc_2->setObjectName(QString::fromUtf8("fc_2"));
         fc_2->setSizeConstraint(QLayout::SetMinimumSize);
-        fc_2->setContentsMargins(0, -1, 0, -1);
         lb_date_fc_2 = new QLabel(layoutWidget);
         lb_date_fc_2->setObjectName(QString::fromUtf8("lb_date_fc_2"));
         lb_date_fc_2->setFont(font4);
@@ -322,13 +286,12 @@ public:
 
         img_weather_fc_2 = new QLabel(layoutWidget);
         img_weather_fc_2->setObjectName(QString::fromUtf8("img_weather_fc_2"));
-        sizePolicy2.setHeightForWidth(img_weather_fc_2->sizePolicy().hasHeightForWidth());
-        img_weather_fc_2->setSizePolicy(sizePolicy2);
+        sizePolicy.setHeightForWidth(img_weather_fc_2->sizePolicy().hasHeightForWidth());
+        img_weather_fc_2->setSizePolicy(sizePolicy);
         img_weather_fc_2->setMinimumSize(QSize(80, 80));
-        img_weather_fc_2->setMaximumSize(QSize(80, 80));
         img_weather_fc_2->setAutoFillBackground(false);
         img_weather_fc_2->setFrameShape(QFrame::NoFrame);
-        img_weather_fc_2->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/dust.png")));
+        img_weather_fc_2->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/regen.jpg")));
         img_weather_fc_2->setScaledContents(true);
 
         fc_2->addWidget(img_weather_fc_2);
@@ -341,7 +304,7 @@ public:
         lb_temp_high_2 = new QLabel(layoutWidget);
         lb_temp_high_2->setObjectName(QString::fromUtf8("lb_temp_high_2"));
         lb_temp_high_2->setFont(font5);
-        lb_temp_high_2->setStyleSheet(QString::fromUtf8("QLabel { color : #ff3333; }"));
+        lb_temp_high_2->setStyleSheet(QString::fromUtf8("QLabel { color : red; }"));
         lb_temp_high_2->setAlignment(Qt::AlignCenter);
 
         vl_temp_2->addWidget(lb_temp_high_2);
@@ -349,7 +312,7 @@ public:
         lb_temp_low_2 = new QLabel(layoutWidget);
         lb_temp_low_2->setObjectName(QString::fromUtf8("lb_temp_low_2"));
         lb_temp_low_2->setFont(font5);
-        lb_temp_low_2->setStyleSheet(QString::fromUtf8("QLabel { color : #49caff; }"));
+        lb_temp_low_2->setStyleSheet(QString::fromUtf8("QLabel { color : blue; }"));
         lb_temp_low_2->setAlignment(Qt::AlignCenter);
 
         vl_temp_2->addWidget(lb_temp_low_2);
@@ -364,7 +327,6 @@ public:
         fc_3->setSpacing(6);
         fc_3->setObjectName(QString::fromUtf8("fc_3"));
         fc_3->setSizeConstraint(QLayout::SetMaximumSize);
-        fc_3->setContentsMargins(0, -1, 0, -1);
         lb_date_fc_3 = new QLabel(layoutWidget);
         lb_date_fc_3->setObjectName(QString::fromUtf8("lb_date_fc_3"));
         lb_date_fc_3->setFont(font4);
@@ -374,13 +336,12 @@ public:
 
         img_weather_fc_3 = new QLabel(layoutWidget);
         img_weather_fc_3->setObjectName(QString::fromUtf8("img_weather_fc_3"));
-        sizePolicy2.setHeightForWidth(img_weather_fc_3->sizePolicy().hasHeightForWidth());
-        img_weather_fc_3->setSizePolicy(sizePolicy2);
+        sizePolicy.setHeightForWidth(img_weather_fc_3->sizePolicy().hasHeightForWidth());
+        img_weather_fc_3->setSizePolicy(sizePolicy);
         img_weather_fc_3->setMinimumSize(QSize(80, 80));
-        img_weather_fc_3->setMaximumSize(QSize(80, 80));
         img_weather_fc_3->setAutoFillBackground(false);
         img_weather_fc_3->setFrameShape(QFrame::NoFrame);
-        img_weather_fc_3->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/icy.png")));
+        img_weather_fc_3->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/regen.jpg")));
         img_weather_fc_3->setScaledContents(true);
 
         fc_3->addWidget(img_weather_fc_3);
@@ -393,7 +354,7 @@ public:
         lb_temp_high_3 = new QLabel(layoutWidget);
         lb_temp_high_3->setObjectName(QString::fromUtf8("lb_temp_high_3"));
         lb_temp_high_3->setFont(font5);
-        lb_temp_high_3->setStyleSheet(QString::fromUtf8("QLabel { color : #ff3333; }"));
+        lb_temp_high_3->setStyleSheet(QString::fromUtf8("QLabel { color : red; }"));
         lb_temp_high_3->setAlignment(Qt::AlignCenter);
 
         vl_temp_3->addWidget(lb_temp_high_3);
@@ -401,7 +362,7 @@ public:
         lb_temp_low_3 = new QLabel(layoutWidget);
         lb_temp_low_3->setObjectName(QString::fromUtf8("lb_temp_low_3"));
         lb_temp_low_3->setFont(font5);
-        lb_temp_low_3->setStyleSheet(QString::fromUtf8("QLabel { color : #49caff; }"));
+        lb_temp_low_3->setStyleSheet(QString::fromUtf8("QLabel { color : blue; }"));
         lb_temp_low_3->setAlignment(Qt::AlignCenter);
 
         vl_temp_3->addWidget(lb_temp_low_3);
@@ -419,13 +380,11 @@ public:
         layout->setStretch(1, 30);
         layout->setStretch(2, 10);
         MainWindow->setCentralWidget(centralWidget);
+        layoutWidget->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 800, 21));
+        menuBar->setGeometry(QRect(0, 0, 797, 21));
         MainWindow->setMenuBar(menuBar);
-        statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QString::fromUtf8("statusBar"));
-        MainWindow->setStatusBar(statusBar);
 
         retranslateUi(MainWindow);
 
@@ -439,14 +398,14 @@ public:
         centralWidget->setStatusTip(QString());
 #endif // QT_NO_STATUSTIP
         lb_pos->setText(QApplication::translate("MainWindow", "Your Position:", 0, QApplication::UnicodeUTF8));
-        le_pos->setPlaceholderText(QApplication::translate("MainWindow", "Enter Address ...", 0, QApplication::UnicodeUTF8));
+        le_pos->setPlaceholderText(QApplication::translate("MainWindow", "Searching...", 0, QApplication::UnicodeUTF8));
         btn_go->setText(QApplication::translate("MainWindow", "GO", 0, QApplication::UnicodeUTF8));
         lb_main_date->setText(QApplication::translate("MainWindow", "06.01.2012 18:35", 0, QApplication::UnicodeUTF8));
         lb_main_temp->setText(QApplication::translate("MainWindow", "9\302\260 C", 0, QApplication::UnicodeUTF8));
         lb_main_humidity->setText(QApplication::translate("MainWindow", "Luftfeuchtigkeit: 49 %", 0, QApplication::UnicodeUTF8));
         lb_main_wind->setText(QApplication::translate("MainWindow", "Wind: SW mit 14 km/h", 0, QApplication::UnicodeUTF8));
-        img_main->setText(QString());
         lb_main_condition->setText(QApplication::translate("MainWindow", "Meist sonnig", 0, QApplication::UnicodeUTF8));
+        img_main->setText(QString());
         lb_date_fc_1->setText(QApplication::translate("MainWindow", "Fr", 0, QApplication::UnicodeUTF8));
         img_weather_fc_1->setText(QString());
         lb_temp_high_1->setText(QApplication::translate("MainWindow", "11\302\260", 0, QApplication::UnicodeUTF8));
