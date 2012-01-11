@@ -42,7 +42,6 @@ void MainWindow::sendRequest()
 
         manager->get(QNetworkRequest(url));
 
-        ui->
         ui->statusBar->showMessage(QString("Request sended, waiting for response..."));
     } else {
         ui->statusBar->showMessage(QString("Invalid input."));
