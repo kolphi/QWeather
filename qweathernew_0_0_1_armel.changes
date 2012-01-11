@@ -1,0 +1,22 @@
+Format: 1.8
+Date: Wed, 11 Jan 2012 18:31:04 +0000
+Source: qweathernew
+Binary: qweathernew
+Architecture: armel
+Version: 0.0.1
+Distribution: unstable
+Urgency: low
+Maintainer: unknown <>
+Changed-By: unknown <>
+Description: 
+ qweathernew - <insert up to 60 chars description>
+Changes: 
+ qweathernew (0.0.1) unstable; urgency=low
+ .
+   * Initial Release.
+Checksums-Sha1: 
+ 4284e13086176176f2a1ef863abdb78cff3b77a6 444494 qweathernew_0.0.1_armel.deb
+Checksums-Sha256: 
+ 9ceb5d9009a4ec786272e35573ab3b164d306f917929edcf21344158c5930aa4 444494 qweathernew_0.0.1_armel.deb
+Files: 
+ 3d01870191273b63c46cf47b9615ec6d 444494 user/hidden optional qweathernew_0.0.1_armel.deb

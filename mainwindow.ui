@@ -6,19 +6,31 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>797</width>
-    <height>479</height>
+    <width>800</width>
+    <height>480</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>QWeather</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>600</width>
+     <height>300</height>
+    </size>
    </property>
    <property name="statusTip">
     <string/>
@@ -27,18 +39,21 @@
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget { background : white; }</string>
+    <string notr="true">QWidget { background : #404040; color: #ffffff}</string>
    </property>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>771</width>
-      <height>431</height>
+      <width>781</width>
+      <height>351</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="layout" stretch="5,30,10">
+     <property name="spacing">
+      <number>5</number>
+     </property>
      <property name="sizeConstraint">
       <enum>QLayout::SetMinAndMaxSize</enum>
      </property>
@@ -49,6 +64,12 @@
        </property>
        <property name="sizeConstraint">
         <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <property name="topMargin">
+        <number>10</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
        </property>
        <item>
         <widget class="QLabel" name="lb_pos">
@@ -87,21 +108,34 @@
            <pointsize>16</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit { background : #ffffff; color: #000000}</string>
+         </property>
          <property name="placeholderText">
-          <string>Searching...</string>
+          <string>Enter Address ...</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="btn_go">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="text">
           <string>GO</string>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -110,19 +144,13 @@
      <item>
       <layout class="QHBoxLayout" name="main" stretch="0,0">
        <property name="spacing">
-        <number>50</number>
-       </property>
-       <property name="leftMargin">
         <number>0</number>
        </property>
-       <property name="rightMargin">
-        <number>50</number>
-       </property>
-       <property name="bottomMargin">
+       <property name="margin">
         <number>0</number>
        </property>
        <item>
-        <layout class="QVBoxLayout" name="main_data" stretch="5,25,10,10,10">
+        <layout class="QVBoxLayout" name="main_data" stretch="5,25,5,5">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -130,7 +158,7 @@
           <enum>QLayout::SetDefaultConstraint</enum>
          </property>
          <property name="topMargin">
-          <number>20</number>
+          <number>10</number>
          </property>
          <property name="bottomMargin">
           <number>20</number>
@@ -146,14 +174,14 @@
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <italic>false</italic>
+             <italic>true</italic>
             </font>
            </property>
            <property name="text">
             <string>06.01.2012 18:35</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
@@ -167,13 +195,13 @@
            </property>
            <property name="font">
             <font>
-             <pointsize>26</pointsize>
+             <pointsize>30</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QLabel { color : red; }</string>
+            <string notr="true">QLabel { color : #ff3333; }</string>
            </property>
            <property name="text">
             <string>9° C</string>
@@ -193,7 +221,7 @@
            </property>
            <property name="font">
             <font>
-             <pointsize>14</pointsize>
+             <pointsize>16</pointsize>
             </font>
            </property>
            <property name="text">
@@ -217,7 +245,7 @@
            </property>
            <property name="font">
             <font>
-             <pointsize>14</pointsize>
+             <pointsize>16</pointsize>
             </font>
            </property>
            <property name="text">
@@ -228,17 +256,70 @@
            </property>
           </widget>
          </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="leftMargin">
+          <number>100</number>
+         </property>
+         <property name="topMargin">
+          <number>20</number>
+         </property>
+         <property name="rightMargin">
+          <number>100</number>
+         </property>
+         <property name="bottomMargin">
+          <number>20</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="img_main">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>128</width>
+             <height>128</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>128</width>
+             <height>128</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="res.qrc">:/new/prefix1/img/sunny.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="lb_main_condition">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="font">
             <font>
-             <pointsize>14</pointsize>
+             <pointsize>16</pointsize>
             </font>
            </property>
            <property name="text">
@@ -251,40 +332,12 @@
          </item>
         </layout>
        </item>
-       <item>
-        <widget class="QLabel" name="img_main">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>200</height>
-          </size>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="res.qrc">:/new/prefix1/img/sonne.jpg</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="bottom">
        <property name="spacing">
-        <number>10</number>
+        <number>50</number>
        </property>
        <property name="sizeConstraint">
         <enum>QLayout::SetDefaultConstraint</enum>
@@ -294,11 +347,17 @@
          <property name="sizeConstraint">
           <enum>QLayout::SetMinimumSize</enum>
          </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLabel" name="lb_date_fc_1">
            <property name="font">
             <font>
-             <pointsize>12</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="text">
@@ -323,6 +382,12 @@
              <height>80</height>
             </size>
            </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>80</height>
+            </size>
+           </property>
            <property name="autoFillBackground">
             <bool>false</bool>
            </property>
@@ -333,7 +398,10 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="res.qrc">:/new/prefix1/img/regen.jpg</pixmap>
+            <pixmap resource="res.qrc">:/new/prefix1/img/chance_of_tstorm.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -352,13 +420,13 @@
             <widget class="QLabel" name="lb_temp_high_1">
              <property name="font">
               <font>
-               <pointsize>12</pointsize>
+               <pointsize>14</pointsize>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">QLabel { color : red; }</string>
+              <string notr="true">QLabel { color : #ff3333; }</string>
              </property>
              <property name="text">
               <string>11°</string>
@@ -372,13 +440,13 @@
             <widget class="QLabel" name="lb_temp_low_1">
              <property name="font">
               <font>
-               <pointsize>12</pointsize>
+               <pointsize>14</pointsize>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">QLabel { color : blue; }</string>
+              <string notr="true">QLabel { color : #49caff; }</string>
              </property>
              <property name="text">
               <string>8°</string>
@@ -397,11 +465,17 @@
          <property name="sizeConstraint">
           <enum>QLayout::SetMinimumSize</enum>
          </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLabel" name="lb_date_fc_2">
            <property name="font">
             <font>
-             <pointsize>12</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="text">
@@ -426,6 +500,12 @@
              <height>80</height>
             </size>
            </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>80</height>
+            </size>
+           </property>
            <property name="autoFillBackground">
             <bool>false</bool>
            </property>
@@ -436,7 +516,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="res.qrc">:/new/prefix1/img/regen.jpg</pixmap>
+            <pixmap resource="res.qrc">:/new/prefix1/img/dust.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -458,13 +538,13 @@
             <widget class="QLabel" name="lb_temp_high_2">
              <property name="font">
               <font>
-               <pointsize>12</pointsize>
+               <pointsize>14</pointsize>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">QLabel { color : red; }</string>
+              <string notr="true">QLabel { color : #ff3333; }</string>
              </property>
              <property name="text">
               <string>11°</string>
@@ -478,13 +558,13 @@
             <widget class="QLabel" name="lb_temp_low_2">
              <property name="font">
               <font>
-               <pointsize>12</pointsize>
+               <pointsize>14</pointsize>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">QLabel { color : blue; }</string>
+              <string notr="true">QLabel { color : #49caff; }</string>
              </property>
              <property name="text">
               <string>8°</string>
@@ -503,11 +583,17 @@
          <property name="sizeConstraint">
           <enum>QLayout::SetMaximumSize</enum>
          </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLabel" name="lb_date_fc_3">
            <property name="font">
             <font>
-             <pointsize>12</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="text">
@@ -532,6 +618,12 @@
              <height>80</height>
             </size>
            </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>80</height>
+            </size>
+           </property>
            <property name="autoFillBackground">
             <bool>false</bool>
            </property>
@@ -542,7 +634,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="res.qrc">:/new/prefix1/img/regen.jpg</pixmap>
+            <pixmap resource="res.qrc">:/new/prefix1/img/icy.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -564,13 +656,13 @@
             <widget class="QLabel" name="lb_temp_high_3">
              <property name="font">
               <font>
-               <pointsize>12</pointsize>
+               <pointsize>14</pointsize>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">QLabel { color : red; }</string>
+              <string notr="true">QLabel { color : #ff3333; }</string>
              </property>
              <property name="text">
               <string>11°</string>
@@ -584,13 +676,13 @@
             <widget class="QLabel" name="lb_temp_low_3">
              <property name="font">
               <font>
-               <pointsize>12</pointsize>
+               <pointsize>14</pointsize>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">QLabel { color : blue; }</string>
+              <string notr="true">QLabel { color : #49caff; }</string>
              </property>
              <property name="text">
               <string>8°</string>
@@ -608,19 +700,18 @@
      </item>
     </layout>
    </widget>
-   <zorder>layoutWidget</zorder>
-   <zorder></zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>797</width>
+     <width>800</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

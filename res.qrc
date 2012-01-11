@@ -1,6 +1,26 @@
 <RCC>
     <qresource prefix="/new/prefix1">
-        <file>img/regen.jpg</file>
-        <file>img/sonne.jpg</file>
+        <file>img/chance_of_rain.png</file>
+        <file>img/chance_of_snow.png</file>
+        <file>img/chance_of_storm.png</file>
+        <file>img/chance_of_tstorm.png</file>
+        <file>img/cloudy.png</file>
+        <file>img/dust.png</file>
+        <file>img/flurries.png</file>
+        <file>img/fog.png</file>
+        <file>img/haze.png</file>
+        <file>img/icy.png</file>
+        <file>img/mist.png</file>
+        <file>img/mostly_cloudy.png</file>
+        <file>img/mostly_sunny.png</file>
+        <file>img/partly_cloudy.png</file>
+        <file>img/rain.png</file>
+        <file>img/sleet.png</file>
+        <file>img/smoke.png</file>
+        <file>img/snow.png</file>
+        <file>img/storm.png</file>
+        <file>img/sunny.png</file>
+        <file>img/thunderstorm.png</file>
+        <file>img/unknown.png</file>
     </qresource>
 </RCC>
