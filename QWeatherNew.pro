@@ -22,8 +22,12 @@ symbian:TARGET.CAPABILITY += NetworkServices
 # CONFIG += mobility
 # MOBILITY +=
 
+QT       += core gui
+QT += network xml
+
 CONFIG += mobility
 MOBILITY = location
+MOBILITY += network
 
 
 SOURCES += main.cpp mainwindow.cpp \

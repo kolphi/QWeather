@@ -9,7 +9,7 @@
 #include <QStringBuilder>
 #include <QXmlStreamReader>
 #include <QXmlStreamAttributes>
-
+#include <QtNetwork/QNetworkRequest>
 
 #include <QtLocation/QGeoPositionInfoSource>
 #include <QtLocation/QGeoPositionInfo>
@@ -47,7 +47,10 @@ public:
 
     void showExpanded();
 
+    QString getPictureString(QString weatherCondition);
+
     QString latlng;
+
 
     /**
      * Obtains the location data source and starts listening for position

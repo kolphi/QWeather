@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed 11. Jan 22:12:42 2012
+** Created: Wed 18. Jan 19:22:09 2012
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -90,7 +90,7 @@ public:
         centralWidget->setStyleSheet(QString::fromUtf8("QWidget { background : #404040; color: #ffffff}"));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 10, 781, 351));
+        layoutWidget->setGeometry(QRect(10, 10, 781, 368));
         layout = new QVBoxLayout(layoutWidget);
         layout->setSpacing(5);
         layout->setContentsMargins(11, 11, 11, 11);
@@ -222,7 +222,7 @@ public:
         img_main->setMinimumSize(QSize(128, 128));
         img_main->setMaximumSize(QSize(128, 128));
         img_main->setFrameShape(QFrame::NoFrame);
-        img_main->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/sunny.png")));
+        img_main->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/unknown.png")));
         img_main->setScaledContents(true);
         img_main->setAlignment(Qt::AlignCenter);
 
@@ -272,7 +272,7 @@ public:
         img_weather_fc_1->setMaximumSize(QSize(80, 80));
         img_weather_fc_1->setAutoFillBackground(false);
         img_weather_fc_1->setFrameShape(QFrame::NoFrame);
-        img_weather_fc_1->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/chance_of_tstorm.png")));
+        img_weather_fc_1->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/unknown.png")));
         img_weather_fc_1->setScaledContents(true);
 
         fc_1->addWidget(img_weather_fc_1);
@@ -328,7 +328,7 @@ public:
         img_weather_fc_2->setMaximumSize(QSize(80, 80));
         img_weather_fc_2->setAutoFillBackground(false);
         img_weather_fc_2->setFrameShape(QFrame::NoFrame);
-        img_weather_fc_2->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/dust.png")));
+        img_weather_fc_2->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/unknown.png")));
         img_weather_fc_2->setScaledContents(true);
 
         fc_2->addWidget(img_weather_fc_2);
@@ -380,7 +380,7 @@ public:
         img_weather_fc_3->setMaximumSize(QSize(80, 80));
         img_weather_fc_3->setAutoFillBackground(false);
         img_weather_fc_3->setFrameShape(QFrame::NoFrame);
-        img_weather_fc_3->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/icy.png")));
+        img_weather_fc_3->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/unknown.png")));
         img_weather_fc_3->setScaledContents(true);
 
         fc_3->addWidget(img_weather_fc_3);
@@ -421,7 +421,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 800, 21));
+        menuBar->setGeometry(QRect(0, 0, 800, 26));
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
@@ -441,24 +441,24 @@ public:
         lb_pos->setText(QApplication::translate("MainWindow", "Your Position:", 0, QApplication::UnicodeUTF8));
         le_pos->setPlaceholderText(QApplication::translate("MainWindow", "Enter Address ...", 0, QApplication::UnicodeUTF8));
         btn_go->setText(QApplication::translate("MainWindow", "GO", 0, QApplication::UnicodeUTF8));
-        lb_main_date->setText(QApplication::translate("MainWindow", "06.01.2012 18:35", 0, QApplication::UnicodeUTF8));
-        lb_main_temp->setText(QApplication::translate("MainWindow", "9\302\260 C", 0, QApplication::UnicodeUTF8));
-        lb_main_humidity->setText(QApplication::translate("MainWindow", "Luftfeuchtigkeit: 49 %", 0, QApplication::UnicodeUTF8));
-        lb_main_wind->setText(QApplication::translate("MainWindow", "Wind: SW mit 14 km/h", 0, QApplication::UnicodeUTF8));
+        lb_main_date->setText(QApplication::translate("MainWindow", "-", 0, QApplication::UnicodeUTF8));
+        lb_main_temp->setText(QApplication::translate("MainWindow", "?\302\260 C", 0, QApplication::UnicodeUTF8));
+        lb_main_humidity->setText(QApplication::translate("MainWindow", "-", 0, QApplication::UnicodeUTF8));
+        lb_main_wind->setText(QApplication::translate("MainWindow", "-", 0, QApplication::UnicodeUTF8));
         img_main->setText(QString());
-        lb_main_condition->setText(QApplication::translate("MainWindow", "Meist sonnig", 0, QApplication::UnicodeUTF8));
+        lb_main_condition->setText(QApplication::translate("MainWindow", "----------", 0, QApplication::UnicodeUTF8));
         lb_date_fc_1->setText(QApplication::translate("MainWindow", "Fr", 0, QApplication::UnicodeUTF8));
         img_weather_fc_1->setText(QString());
-        lb_temp_high_1->setText(QApplication::translate("MainWindow", "11\302\260", 0, QApplication::UnicodeUTF8));
-        lb_temp_low_1->setText(QApplication::translate("MainWindow", "8\302\260", 0, QApplication::UnicodeUTF8));
+        lb_temp_high_1->setText(QApplication::translate("MainWindow", "?\302\260", 0, QApplication::UnicodeUTF8));
+        lb_temp_low_1->setText(QApplication::translate("MainWindow", "?\302\260", 0, QApplication::UnicodeUTF8));
         lb_date_fc_2->setText(QApplication::translate("MainWindow", "Fr", 0, QApplication::UnicodeUTF8));
         img_weather_fc_2->setText(QString());
-        lb_temp_high_2->setText(QApplication::translate("MainWindow", "11\302\260", 0, QApplication::UnicodeUTF8));
-        lb_temp_low_2->setText(QApplication::translate("MainWindow", "8\302\260", 0, QApplication::UnicodeUTF8));
+        lb_temp_high_2->setText(QApplication::translate("MainWindow", "?\302\260", 0, QApplication::UnicodeUTF8));
+        lb_temp_low_2->setText(QApplication::translate("MainWindow", "?\302\260", 0, QApplication::UnicodeUTF8));
         lb_date_fc_3->setText(QApplication::translate("MainWindow", "Fr", 0, QApplication::UnicodeUTF8));
         img_weather_fc_3->setText(QString());
-        lb_temp_high_3->setText(QApplication::translate("MainWindow", "11\302\260", 0, QApplication::UnicodeUTF8));
-        lb_temp_low_3->setText(QApplication::translate("MainWindow", "8\302\260", 0, QApplication::UnicodeUTF8));
+        lb_temp_high_3->setText(QApplication::translate("MainWindow", "?\302\260", 0, QApplication::UnicodeUTF8));
+        lb_temp_low_3->setText(QApplication::translate("MainWindow", "?\302\260", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

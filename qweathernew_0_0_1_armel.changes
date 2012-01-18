@@ -15,8 +15,8 @@ Changes:
  .
    * Initial Release.
 Checksums-Sha1: 
- 4284e13086176176f2a1ef863abdb78cff3b77a6 444494 qweathernew_0.0.1_armel.deb
+ 6b4e60235aa3bfaedc62d3a3092b6830db7c5d91 509224 qweathernew_0.0.1_armel.deb
 Checksums-Sha256: 
- 9ceb5d9009a4ec786272e35573ab3b164d306f917929edcf21344158c5930aa4 444494 qweathernew_0.0.1_armel.deb
+ 1848723236e06aa337ff6ce16a7f969f34f1181d0a7a42c5e3426f7125e10fed 509224 qweathernew_0.0.1_armel.deb
 Files: 
- 3d01870191273b63c46cf47b9615ec6d 444494 user/hidden optional qweathernew_0.0.1_armel.deb
+ f2525ea479cc39cceb76119c917cac57 509224 user/hidden optional qweathernew_0.0.1_armel.deb
