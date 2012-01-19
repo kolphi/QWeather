@@ -18,6 +18,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
+    //setup the gui and connect signals to slots
+    requestWeather = false;
     ui->setupUi(this);
     manager = new QNetworkAccessManager(this);
     geoCodingSuccessfull = false;
@@ -44,11 +46,14 @@ MainWindow::~MainWindow()
 void MainWindow::sendRequest()
 {
     requestWeather = false;
+    geoCodingSuccessfull = false;
+
+
     QString latlng = this->latlng;
     if (!latlng.isNull()) {
         QUrl url("http://maps.google.com/maps/api/geocode/xml");
         url.addQueryItem("latlng", latlng);
-        url.addQueryItem("sensor", "false"); // Required by google
+        url.addQueryItem("sensor", "true"); // Required by google
         qDebug(url.toString().toAscii());
 
         manager->get(QNetworkRequest(url));
@@ -159,29 +164,33 @@ void MainWindow::sendWeatherRequest()
 
         ui->statusBar->showMessage(QString("Weather Request sended, waiting for response..."));
     } else {
-        ui->statusBar->showMessage(QString("No GPS-Position found."));
+        ui->statusBar->showMessage(QString("Failed to send a weather request."));
     }
 }
 
 void MainWindow::replyFinished(QNetworkReply* response)
 {
+    bool locationFound = false;
     if(!requestWeather){
 
     QXmlStreamReader xml(response);
     if (!xml.hasError()) {
-        QString address;
-        while (!xml.atEnd()) {
+        QString address = "";
+        while (!xml.atEnd() && !locationFound) {
             xml.readNextStartElement();
                 if (xml.name() == "formatted_address") {
-                    address = *(new QString(xml.readElementText()));
+                    geoCodingSuccessfull = true;
+                    address = *(new QString(address.append((xml.readElementText()))));
                     const QString address2 = address;
                     ui->le_pos->setText(address2);
                     ui->lb_main_date->setText(address2);
+                    locationFound = true;
                  //   ui->lb_main_date->setText(*address);
                 }
         }
 
         ui->statusBar->showMessage(QString("Successfully received XML location data."));
+
     } else {
         ui->statusBar->showMessage(QString("Failed to parse XML location data."));
     }
@@ -190,7 +199,6 @@ void MainWindow::replyFinished(QNetworkReply* response)
         QXmlStreamReader xml(response);
         QXmlStreamAttributes attributes;
         if (!xml.hasError()) {
-
 
             //initializing variables
             QString date = "";
@@ -323,6 +331,7 @@ void MainWindow::replyFinished(QNetworkReply* response)
 
                     }
 
+                    //parsing out low xml
                     if (xml.name() == "low") {
                         attributes = xml.attributes();
                         low = *(new QString(low.append(attributes.value("data"))));
@@ -345,6 +354,8 @@ void MainWindow::replyFinished(QNetworkReply* response)
 
                     }
 
+
+                    //parsing out day of week
                     if (xml.name() == "day_of_week") {
                         attributes = xml.attributes();
                         day = *(new QString(day.append(attributes.value("data"))));
@@ -397,11 +408,16 @@ void MainWindow::positionUpdated(QGeoPositionInfo geoPositionInfo)
         QString string1;
         QString string2;
      //   QChar c = 'g';
+
+        //build the string for latitude-longitude
         string1.setNum(latitude);
         this->latlng.append(string1);
         string2.setNum(longitude);
+        this->latlng.append(",");
         this->latlng.append(string2);
 
+
+        //send the location request
         sendRequest();
     }
 }

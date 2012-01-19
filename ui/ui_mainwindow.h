@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed 18. Jan 19:22:09 2012
+** Created: Wed 18. Jan 23:11:54 2012
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -442,7 +442,7 @@ public:
         le_pos->setPlaceholderText(QApplication::translate("MainWindow", "Enter Address ...", 0, QApplication::UnicodeUTF8));
         btn_go->setText(QApplication::translate("MainWindow", "GO", 0, QApplication::UnicodeUTF8));
         lb_main_date->setText(QApplication::translate("MainWindow", "-", 0, QApplication::UnicodeUTF8));
-        lb_main_temp->setText(QApplication::translate("MainWindow", "?\302\260 C", 0, QApplication::UnicodeUTF8));
+        lb_main_temp->setText(QApplication::translate("MainWindow", "? \302\260F", 0, QApplication::UnicodeUTF8));
         lb_main_humidity->setText(QApplication::translate("MainWindow", "-", 0, QApplication::UnicodeUTF8));
         lb_main_wind->setText(QApplication::translate("MainWindow", "-", 0, QApplication::UnicodeUTF8));
         img_main->setText(QString());

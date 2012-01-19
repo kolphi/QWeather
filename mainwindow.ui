@@ -204,7 +204,7 @@
             <string notr="true">QLabel { color : #ff3333; }</string>
            </property>
            <property name="text">
-            <string>?° C</string>
+            <string>? °F</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
