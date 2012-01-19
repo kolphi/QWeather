@@ -32,6 +32,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 public:
 
+    //setting the screen orientation
     enum ScreenOrientation {
         ScreenOrientationLockPortrait,
         ScreenOrientationLockLandscape,
@@ -42,13 +43,25 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     virtual ~MainWindow();
 
-    // Note that this will only have an effect on Symbian and Fremantle.
+    // this will only have an effect on Symbian and Fremantle.
+
+    /**
+      *Setting the orientation
+      */
     void setOrientation(ScreenOrientation orientation);
 
+    /**
+      *Show full application
+      */
     void showExpanded();
 
+    /**
+      *Returns the path to the picture of the specified condition in the ressources file
+      *@return QString condition - the path to the resources file
+      */
     QString getPictureString(QString weatherCondition);
 
+    //String to save the latitude and longitude values after geolocation
     QString latlng;
 
 
@@ -59,10 +72,19 @@ public:
     void startGPS();
 
 signals:
+    /**
+     * Signal for the start of the program
+     */
     void programStarted();
 
 public slots:
+    /**
+     * Sends a Request for location XML data
+     */
     void sendRequest();
+    /**
+     * Sends a Request for weather XML data
+     */
     void sendWeatherRequest();
     void replyFinished(QNetworkReply*);
     /**
@@ -72,6 +94,7 @@ public slots:
 
 
 private:
+
     Ui::MainWindow *ui;
     QNetworkAccessManager *manager;
     QPointer<QGeoPositionInfoSource> locationDataSource;

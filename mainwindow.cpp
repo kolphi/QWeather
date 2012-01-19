@@ -95,6 +95,9 @@ QString MainWindow::getPictureString(QString weatherCondition){
     }else if(weatherCondition.compare("Flurries")==0){
         pictureString = ":/new/prefix1/img/flurries.png";
 
+    }else if(weatherCondition.compare("Overcast")==0){
+        pictureString = ":/new/prefix1/img/cloudy.png";
+
     }else if(weatherCondition.compare("Clear")==0){
         pictureString = ":/new/prefix1/img/sunny.png";
 
@@ -154,7 +157,7 @@ void MainWindow::sendWeatherRequest()
 {
     requestWeather = true;
     QString weather = ui->le_pos->text();
-    if (!weather.isNull()) {
+    if (!weather.isNull() && weather.compare("") != 0) {
         QUrl url("http://maps.google.com/ig/api");
         url.addQueryItem("weather", weather);
         url.addQueryItem("hl", "en"); // Required by google
@@ -170,7 +173,9 @@ void MainWindow::sendWeatherRequest()
 
 void MainWindow::replyFinished(QNetworkReply* response)
 {
+
     bool locationFound = false;
+    //set variable for request-type
     if(!requestWeather){
 
     QXmlStreamReader xml(response);
@@ -183,7 +188,6 @@ void MainWindow::replyFinished(QNetworkReply* response)
                     address = *(new QString(address.append((xml.readElementText()))));
                     const QString address2 = address;
                     ui->le_pos->setText(address2);
-                    ui->lb_main_date->setText(address2);
                     locationFound = true;
                  //   ui->lb_main_date->setText(*address);
                 }
@@ -218,6 +222,7 @@ void MainWindow::replyFinished(QNetworkReply* response)
 
             //already added °F?
             bool added = false;
+            bool cityNotFound = false;
 
             //setting counters to specify how often a variable was called
             //because variabels appear more often in the xml(4 days are displayed)
@@ -232,6 +237,10 @@ void MainWindow::replyFinished(QNetworkReply* response)
             while (!xml.atEnd()) {
                 xml.readNextStartElement();
 
+                if (xml.name() == "problem_cause") {
+                    cityNotFound = true;
+                }
+
                 //setting date
                     if (xml.name() == "forecast_date") {
                         attributes = xml.attributes();
@@ -241,6 +250,7 @@ void MainWindow::replyFinished(QNetworkReply* response)
 
                     }
 
+                    //parsing weather condition data
                     if (xml.name() == "condition") {
 
                         attributes = xml.attributes();
@@ -277,7 +287,7 @@ void MainWindow::replyFinished(QNetworkReply* response)
                         condition = "";
                     }
 
-
+                    //parsing temp of today
                     if (xml.name() == "temp_f") {
 
 
@@ -293,6 +303,7 @@ void MainWindow::replyFinished(QNetworkReply* response)
                         ui->lb_main_temp->setText(temp2);
 
                     }
+                    //parsing humidity data
                     if (xml.name() == "humidity") {
                         attributes = xml.attributes();
                         humidity = *(new QString(humidity.append(attributes.value("data"))));
@@ -300,6 +311,8 @@ void MainWindow::replyFinished(QNetworkReply* response)
                         ui->lb_main_humidity->setText(humidity2);
 
                     }
+
+                    //parsing wind condition data
                     if (xml.name() == "wind_condition") {
                         attributes = xml.attributes();
                         windCondition = *(new QString(windCondition.append(attributes.value("data"))));
@@ -308,6 +321,7 @@ void MainWindow::replyFinished(QNetworkReply* response)
 
                     }
 
+                    //parsing high temp data of the xml
                     if (xml.name() == "high") {
                         attributes = xml.attributes();
                         high = *(new QString(high.append(attributes.value("data"))));
@@ -331,7 +345,7 @@ void MainWindow::replyFinished(QNetworkReply* response)
 
                     }
 
-                    //parsing out low xml
+                    //parsing low temp data of the xml
                     if (xml.name() == "low") {
                         attributes = xml.attributes();
                         low = *(new QString(low.append(attributes.value("data"))));
@@ -376,16 +390,26 @@ void MainWindow::replyFinished(QNetworkReply* response)
                         day = "";
                         dayCounter++;
 
-                     }
+                     }//end-if
+
+            }//end while
 
 
+            //update the status bar
+
+            //check if city was found
+            if(cityNotFound){
+                ui->statusBar->showMessage(QString("Address was not found. Please try again!"));
+            }else{
+                ui->statusBar->showMessage(QString("Successfully received XML weather data."));
             }
-            ui->statusBar->showMessage(QString("Successfully received XML weather data."));
-        } else {
-            ui->statusBar->showMessage(QString("Failed to parse XML weather data."));
-        }
 
-    }
+    }else{
+         ui->statusBar->showMessage(QString("XML error while parsing."));
+         }
+
+    }//end if-request-weather
+
 }
 
 
@@ -452,7 +476,7 @@ void MainWindow::startGPS()
 
 }
 
-
+//handle orientation
 void MainWindow::setOrientation(ScreenOrientation orientation)
 {
 #if defined(Q_OS_SYMBIAN)
